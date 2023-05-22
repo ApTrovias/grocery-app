@@ -1,0 +1,11 @@
+.product-name {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .add-to-cart-button {
+    vertical-align: middle;
+  }
+  

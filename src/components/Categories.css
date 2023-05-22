@@ -1,0 +1,17 @@
+.category-button {
+    border: none;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .category-button.active {
+    background: #000;
+    font-size: 24px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: 0.36s;
+  }
+  
+  

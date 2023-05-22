@@ -1,0 +1,17 @@
+.cart-button {
+    border: none;
+}
+
+.cart-list {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%; /* Adjust the width as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+  }

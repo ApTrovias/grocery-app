@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import ModalNav from "./ModalNav";
 import { Button } from "react-bootstrap";
-import Checkout from "./Checkout";
+import ModalNav from "./ModalNav";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

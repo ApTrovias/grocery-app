@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Offcanvas, Form, Button } from "react-bootstrap";
+import { Offcanvas, Form, Button, Col } from "react-bootstrap";
 
 const Checkout = ({
   handleClose,
@@ -46,13 +46,15 @@ const Checkout = ({
           ) : (
             <div>
               <h3>Cart Items:</h3>
-              {cartItems.map((item) => (
-                <div key={item.id}>
-                  <p>{item.name}</p>
-                  <p>Price: {item.price}</p>
-                  <p>Quantity: {item.quantity}</p>
-                </div>
-              ))}
+              <Col>
+                {cartItems.map((item) => (
+                  <div key={item.id}>
+                    <p>{item.name}</p>
+                    <p>Price: {item.price}</p>
+                    <p>Quantity: {item.quantity}</p>
+                  </div>
+                ))}
+              </Col>
               <h4>Total Price: {calculateTotalPrice().toFixed(2)} $</h4>
 
               <Form onSubmit={handleSubmit}>

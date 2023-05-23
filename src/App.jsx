@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Sidebar from "./components/Sidebar";
-import ProductList from "./components/products";
+import Shopping from "./components/Shopping/Shopping";
 import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/footer/Footer";
 import { Container, Row } from "react-bootstrap";
 import Fresh from "./components/Fresh";
 
@@ -14,7 +13,7 @@ const App = () => {
         <Header />
       </Row>
       <Row>
-        <ProductList />
+        <Shopping />
         <Fresh />
       </Row>
       <Row>

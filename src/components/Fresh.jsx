@@ -12,7 +12,7 @@ const Fresh = () => {
       }}
     >
       <img
-        src="src/assets/shop.png"
+        src="src/assets/shop.webp"
         alt="Background"
         style={{ width: "100%", height: "100%", backgroundSize: "cover" }}
       />

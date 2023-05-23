@@ -1,82 +1,92 @@
 import React, { useState } from "react";
-import Categories from "./Categories";
-import Cart from "./Cart";
-import Sidebar from "./Sidebar";
-import { addToCart } from "../../utilities/Cart";
-import "./ProductList.scss";
-import { Container, Row, Col } from "react-bootstrap";
+import Categories from "../Categories/Categories";
+import Cart from "../Cart/Cart";
+import Sidebar from "../Sidebar/Sidebar";
+import { addToCart } from "../../../utilities/Cart";
+import "./Shopping.css";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 const ProductList = () => {
   const products = [
     {
       id: 0,
-      name: "1 ",
+      name: "Eggs",
       category: "Grocery",
       price: 9.99,
-      image: "https://placehold.co/100",
+      image: "https://placehold.co/250",
+      desc: "Product's description",
     },
     {
       id: 1,
-      name: "Product 2",
+      name: "Chicken",
       category: "Meat",
       price: 14.99,
-      image: "https://placehold.co/100",
+      image: "https://placehold.co/250",
+      desc: "Product's description",
     },
     {
       id: 2,
-      name: "Product 3",
+      name: "Shampoo",
       category: "Household Essentials",
       price: 19.99,
-      image: "https://placehold.co/100",
+      image: "https://placehold.co/250",
+      desc: "Product's description",
     },
     {
       id: 3,
-      name: "Product 4",
+      name: "Bananas",
       category: "Fruit and Vegetable",
       price: 12.99,
-      image: "https://placehold.co/100",
+      image: "https://placehold.co/250",
+      desc: "Product's description",
     },
     {
       id: 5,
-      name: "Product 1 asdaassa",
+      name: "Biscuits",
       category: "Grocery",
       price: 9.99,
-      image: "https://placehold.co/100",
+      image: "https://placehold.co/250",
+      desc: "Product's description",
     },
     {
       id: 6,
-      name: "Product 1",
+      name: "Chips",
       category: "Grocery",
       price: 9.99,
-      image: "https://placehold.co/100",
+      image: "https://placehold.co/250",
+      desc: "Product's description",
     },
     {
       id: 7,
-      name: "Product 7",
+      name: "Butter",
       category: "Grocery",
       price: 9.99,
-      image: "https://placehold.co/100",
+      image: "https://placehold.co/250",
+      desc: "Product's description",
     },
     {
       id: 8,
-      name: "Product 8",
+      name: "Marmelade",
       category: "Grocery",
       price: 9.99,
-      image: "https://placehold.co/100",
+      image: "https://placehold.co/250",
+      desc: "Product's description",
     },
     {
       id: 9,
-      name: "Product 9",
+      name: "Flour",
       category: "Grocery",
       price: 9.99,
-      image: "https://placehold.co/100",
+      image: "https://placehold.co/250",
+      desc: "Product's description",
     },
     {
       id: 10,
-      name: "Product 10",
+      name: "Sugar",
       category: "Grocery",
       price: 9.99,
-      image: "https://placehold.co/100",
+      image: "https://placehold.co/250",
+      desc: "Product's description",
     },
   ];
 
@@ -145,40 +155,35 @@ const ProductList = () => {
               {filteredProducts.length > 0 ? (
                 <Container className="product-container">
                   <Row>
-                    <h3>{filteredProducts[currentProductIndex].name}</h3>
                     <Col key={filteredProducts[currentProductIndex].id}>
-                      <button
-                        className="product-nav-btn"
-                        onClick={handlePreviousItem}
-                      >
-                        Back
-                      </button>
+                      <h3>{filteredProducts[currentProductIndex].name}</h3>
                       <img
                         src={filteredProducts[currentProductIndex].image}
                         alt={filteredProducts[currentProductIndex].name}
                       />
-                      <button
-                        className="product-nav-btn"
-                        onClick={handleNextItem}
+                      <div style={{ fontSize: "24px" }}>
+                        {filteredProducts[currentProductIndex].price} $
+                      </div>
+                      <Button
+                        onClick={() =>
+                          handleAddToCart(filteredProducts[currentProductIndex])
+                        }
                       >
-                        Next
-                      </button>
-                      <Row
-                        style={{ display: "flex", justifyContent: "center" }}
-                      >
-                        <span style={{ fontSize: "24px" }}>
-                          {filteredProducts[currentProductIndex].price} $
-                        </span>
-                        <button
-                          onClick={() =>
-                            handleAddToCart(
-                              filteredProducts[currentProductIndex]
-                            )
-                          }
+                        Add to Cart
+                      </Button>
+                      <div style={{ marginTop: "0.75rem" }}>
+                        <Button
+                          style={{ marginRight: "0.75rem" }}
+                          onClick={handlePreviousItem}
                         >
-                          Add to Cart
-                        </button>
-                      </Row>
+                          Back
+                        </Button>
+                        <Button onClick={handleNextItem}>Next</Button>
+                      </div>
+                    </Col>
+                    <Col>
+                      <h3>Description</h3>
+                      <p>{filteredProducts[currentProductIndex].desc}</p>
                     </Col>
                   </Row>
                 </Container>

@@ -7,7 +7,7 @@ import {
   faMinus,
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
-import Checkout from "./Checkout";
+import Checkout from "../Checkout/Checkout";
 import "./Cart.css";
 
 const Cart = ({ cartItems, setCartItems }) => {

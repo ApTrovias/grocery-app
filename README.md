@@ -1,3 +1,3 @@
 # grocery-app
 
-Hello
+A single grocery app built with React
